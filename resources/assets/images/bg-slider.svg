@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1440px" height="665px" viewBox="0 0 1440 665" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52 (66869) - http://www.bohemiancoding.com/sketch -->
+    <title>bg-slider</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="-1.92704055%" y1="93.9980115%" x2="114.577098%" y2="100%" id="linearGradient-1">
+            <stop stop-color="#4C878F" offset="0%"></stop>
+            <stop stop-color="#000000" offset="100%"></stop>
+        </linearGradient>
+        <polygon id="path-2" points="0 0 0 528.5 944.260417 698 1482 634 1482 6"></polygon>
+        <linearGradient x1="-1.92704055%" y1="93.9980115%" x2="100%" y2="93.9980115%" id="linearGradient-4">
+            <stop stop-color="#4C878F" offset="0%"></stop>
+            <stop stop-color="#303135" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-About-" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Home">
+            <g id="bg-slider" transform="translate(740.000000, 316.000000) scale(-1, 1) translate(-740.000000, -316.000000) translate(-1.000000, -33.000000)">
+                <g id="Rectangle">
+                    <mask id="mask-3" fill="white">
+                        <use xlink:href="#path-2"></use>
+                    </mask>
+                    <use id="Mask" fill="url(#linearGradient-1)" xlink:href="#path-2"></use>
+                    <rect fill="url(#linearGradient-4)" mask="url(#mask-3)" x="0" y="32" width="1482" height="671"></rect>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>
