@@ -6,6 +6,8 @@
 
 add_action('wp_enqueue_scripts', function () {
   wp_enqueue_style('custom/custom-classes', get_theme_file_uri() . '/framework/assets/custom-classes.css', false, null);
+  wp_enqueue_style('custom/jquery-ui', get_theme_file_uri() . '/framework/assets/jquery-ui.css', false, null);
+  wp_enqueue_script('custom/scripts.js', get_theme_file_uri() . '/framework/assets/scripts.js', null, true);
 }, 100);
 
 

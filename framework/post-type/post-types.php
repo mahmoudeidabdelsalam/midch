@@ -21,7 +21,7 @@ function patients_post_type() {
     
     $args = array(
         'labels' => $labels,
-        'supports' => array('title','editor','revisions','thumbnail', 'custom-fields'),
+        'supports' => array('title','editor','revisions','thumbnail', 'custom-fields', 'author'),
         // 'taxonomies' => array(''),
         'hierarchical' => false,
         'public' => true,
