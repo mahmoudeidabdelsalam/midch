@@ -18,26 +18,25 @@ function process_user_roles(){
     /************************* products **************************/
     remove_role('syndicate');
     remove_role('doctor');
+    remove_role('patient');
 
     add_role('doctor', __('doctor','theme'), []);
     add_role('syndicate', __('syndicate','theme'), []);
+    add_role('patient', __('patient','theme'), []);
 
     $capabilities = get_role( 'editor' )->capabilities;
 
+    
    
-    $roles = ['doctor', 'syndicate', 'administrator'];
+    $roles = ['doctor', 'syndicate', 'patient', 'administrator'];
     foreach ($roles as $role) {
       $role = get_role($role);
       $role->add_cap('read');
       foreach ($capabilities as $key => $cap) {
-        //  dd($key);
         $role->add_cap($key);
       }
  
     }
-
-
-   
 
     echo "Roles Proceed Succesfully";
     die();
@@ -50,7 +49,7 @@ function process_user_roles(){
 
 
 $user = wp_get_current_user();
-$allowed_roles = array('doctor', 'syndicate');
+$allowed_roles = array('doctor', 'syndicate', 'patient');
 if( array_intersect($allowed_roles, $user->roles ) ) {  
   function remove_menus() {
     remove_menu_page( 'index.php' );                  //Dashboard                 //Jetpack* 

@@ -59,8 +59,17 @@
               </div>
               <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
                 <a class="nav-link active" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="true">Reports</a><br/>
-                <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false">Add report</a><br/>
+                <ul>
+                  <li><a href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i> Analysis</a></li>
+                  <li><a href="#"><i class="fa fa-folder-open-o" aria-hidden="true"></i> measurements</a></li>
+                </ul>
+
+                <hr class="mt-5">
+                @if ($current_user->roles[0] == 'doctor' || $current_user->roles[0] == 'administrator')
+                  <a class="nav-link" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="false">Add report</a><br/>
+                @endif
                 <a class="nav-link" id="v-pills-reports-tab" data-toggle="pill" href="#v-pills-reports" role="tab" aria-controls="v-pills-reports" aria-selected="false">Add Analysis</a><br/>
+                <a class="nav-link" id="v-pills-measurements-tab" data-toggle="pill" href="#v-pills-measurements" role="tab" aria-controls="v-pills-measurements" aria-selected="false">Add Measurements</a><br/>
               </div>
             </div>
 
@@ -350,7 +359,79 @@
 
 
 
-                <!-- All reports -->
+                <!-- Add reports -->
+                <div class="tab-pane fade" id="v-pills-measurements" role="tabpanel" aria-labelledby="v-pills-measurements-tab">
+                  <div class="mt-5">
+                    <div class="col-12">
+                      <h2 class="headline">{{ _e('Add measurements', 'theme') }}</h2>
+                    </div>
+
+
+                    <div id="MeasurementsLoader" style="display: none">
+                      <div class="sk-chase">
+                        <div class="sk-chase-dot"></div>
+                        <div class="sk-chase-dot"></div>
+                        <div class="sk-chase-dot"></div>
+                        <div class="sk-chase-dot"></div>
+                        <div class="sk-chase-dot"></div>
+                        <div class="sk-chase-dot"></div>
+                      </div>
+                    </div>
+
+                    <div id="Measurementserrors" style="display: none">
+                      <div class="alert alert-danger" role="alert">
+                        Please complete all fields <strong class="text-danger">(required)</strong>.
+                      </div>
+                    </div>
+
+
+                    <div id="Measurementssuccess" style="display: none">
+                      <div class="alert alert-success" role="alert"></div>
+                    </div>
+
+
+                    <form class="col-12" id="MeasurementsNewPost" name="new_post" method="post" action="" enctype="multipart/form-data">
+                      <div class="row">
+              
+                        <div class="form-group col-md-6 col-12">
+                          <label>Length</label>
+                          <input type="number" name="mobile" class="form-control">
+                        </div>
+                       <div class="form-group col-md-6 col-12">
+                          <label>weight</label>
+                          <input type="number" name="mobile" class="form-control">
+                        </div>
+                       <div class="form-group col-md-6 col-12">
+                          <label>temperature</label>
+                          <input type="number" name="mobile" class="form-control">
+                        </div>
+                       <div class="form-group col-md-6 col-12">
+                          <label>Sugar</label>
+                          <input type="number" name="mobile" class="form-control">
+                        </div>
+                       <div class="form-group col-md-6 col-12">
+                          <label>Pressure (number / number)</label>
+                          <div class="row">
+                            <input type="number" name="mobile" class="form-control">
+                            <input type="number" name="mobile" class="form-control">
+                          </div>
+                        </div>
+                       <div class="form-group col-md-6 col-12">
+                          <label>Urine level</label>
+                          <input type="number" name="mobile" class="form-control">
+                        </div>
+
+                      </div>
+
+                      <input type="hidden" name="author_id" value="{{ $current_user->ID }}">
+                      <input type="hidden" name="action" value="new_post">
+                      <button id="AddNew" class="btn-add" type="submit">Add New</button>
+                    </form>
+                  </div>
+                </div>
+
+                
+                                <!-- Add reports -->
                 <div class="tab-pane fade" id="v-pills-reports" role="tabpanel" aria-labelledby="v-pills-reports-tab">
                   <div class="mt-5">
                     <div class="col-12">
@@ -418,7 +499,6 @@
                   </div>
                 </div>
 
-                
 
 
               </div>
@@ -896,4 +976,27 @@
         top: 37px;
         border-radius: 4px;
       }
+      section#SectionAuthor .sidebar-menu a ul {
+    display: flex;
+}
+
+section#SectionAuthor .flex-column ul {
+    display: flex;
+    width: 100%;
+    flex-flow: column;
+    padding-top: 25px !important;
+}
+
+section#SectionAuthor .flex-column ul li a {
+    margin: 0;
+    font-size: 19px;
+}
+.form-group .row input {
+    width: 45%;
+    margin: 0 2.5%;
+}
+
+.form-group .row {
+    margin: 0;
+}
     </style>

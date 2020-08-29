@@ -23,6 +23,7 @@
           </ul>
         @else 
           <a class="button-green" href="#" data-toggle="modal" data-target="#LoginModal">login</a>
+          <a class="sgin-up" href="{{ the_field('sign_up_page', 'option') }}">Sign up</a>
         @endif
       </div>
     </nav>
@@ -137,5 +138,9 @@
   ul#listUser li:nth-child(1) {
     border-right: 3px solid #fff;
     padding-right: 20px;
+  }
+  .sgin-up {
+    color: #14c25f;
+    margin-left: 10px;
   }
 </style>
